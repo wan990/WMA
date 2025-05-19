@@ -24,7 +24,6 @@ if ($selected_bulan) {
   if ($index_terpilih >= 3) {
     $can_calculate = true;
 
-    // Proses perhitungan saat tombol "Hitung Sekarang" diklik
     if (isset($_POST['hitung'])) {
       $wma = (
         $penjualan[$index_terpilih - 3]['jumlah'] * 1 +
@@ -37,7 +36,7 @@ if ($selected_bulan) {
       mysqli_stmt_bind_param($stmt, "di", $wma, $id);
       mysqli_stmt_execute($stmt);
 
-      $show_result = true; // Tampilkan hasil hanya setelah dihitung
+      $show_result = true; 
     }
   }
 }
@@ -45,7 +44,6 @@ if ($selected_bulan) {
 
 <h3 class="mb-4"><i class="bi bi-calculator"></i> Hitung Peramalan Penjualan</h3>
 
-<!-- Form Pilih Bulan -->
 <form method="POST" class="mb-4">
   <div class="row g-3 align-items-end">
     <div class="col-md-6">
