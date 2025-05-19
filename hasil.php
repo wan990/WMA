@@ -2,7 +2,6 @@
 include 'header.php';
 include 'koneksi.php';
 
-// Ambil hanya data dengan hasil_wma yang tidak null
 $data = mysqli_query($koneksi, "SELECT * FROM penjualan WHERE hasil IS NOT NULL ORDER BY id ASC");
 
 $hasil = [];
